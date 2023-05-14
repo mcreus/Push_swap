@@ -6,7 +6,7 @@
 /*   By: mcreus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 17:11:13 by mcreus            #+#    #+#             */
-/*   Updated: 2023/05/09 10:36:12 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/05/10 10:19:12 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	get_max_bits(t_list **stack)
 			max = head->index;
 		head = head->next;
 	}
-	while (max >> max_bits)
+	while ((max >> max_bits) != 0)
 		max_bits++;
 	return (max_bits);
 }

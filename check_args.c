@@ -6,7 +6,7 @@
 /*   By: mcreus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 16:00:00 by mcreus            #+#    #+#             */
-/*   Updated: 2023/05/09 14:56:01 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/05/12 15:01:32 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ void	ft_check_args(int ac, char **av)
 	{
 		tmp = ft_atoi(args[i]);
 		if (!ft_isnum(args[i]))
-			ft_error("Error\n not num\n");
+			ft_error("Error\n");
 		if (ft_contains(tmp, args, i))
-			ft_error("Error\n contains\n");
+			ft_error("Error\n");
 		if (tmp < -2147483648 || tmp > 2147483647)
-			ft_error("Error\n respect min and max\n");
+			ft_error("Error\n");
 		i++;
 	}
 	if (ac == 2)

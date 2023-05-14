@@ -6,17 +6,17 @@
 /*   By: mcreus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 12:17:24 by mcreus            #+#    #+#             */
-/*   Updated: 2023/05/09 15:48:24 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/05/11 15:22:55 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*int	commandes(char *line, t_list **stack_a, t_list **stack_b)
+int	commandes(char *line, t_list **stack_a, t_list **stack_b)
 {
-	if (!(ft_strcmp(line, "sa")))
+	if (!(ft_strcmp(line, "ra")))
 	{
-		swap(stack_a);
+		rotate(stack_a);
 		return (0);
 	}
 	if (!(ft_strcmp(line, "sb")))
@@ -35,9 +35,7 @@
 		push(stack_a, stack_b);
 		return (0);
 	}
-	else
-		commandes_2(line, stack_a, stack_b);
-	return (1);
+	return (commandes_2(line, stack_a, stack_b));
 }
 
 int	commandes_2(char *line, t_list **stack_a, t_list **stack_b)
@@ -47,9 +45,9 @@ int	commandes_2(char *line, t_list **stack_a, t_list **stack_b)
 		push(stack_b, stack_a);
 		return (0);
 	}
-	if (!(ft_strcmp(line, "ra")))
+	if (!(ft_strcmp(line, "sa")))
 	{
-		rotate(stack_a);
+		swap(stack_a);
 		return (0);
 	}
 	if (!(ft_strcmp(line, "rb")))
@@ -63,12 +61,10 @@ int	commandes_2(char *line, t_list **stack_a, t_list **stack_b)
 		rotate(stack_b);
 		return (0);
 	}
-	else
-		commandes_3(line, stack_a, stack_b);
-	return (1);
+	return (commandes_3(line, stack_a, stack_b));
 }
 
-int	ft_commandes_3(char *line, t_list **stack_a, t_list **stack_b)
+int	commandes_3(char *line, t_list **stack_a, t_list **stack_b)
 {
 	if (!(ft_strcmp(line, "rra")))
 	{
@@ -139,4 +135,4 @@ int	main(int ac, char **av)
 	}
 	print_resultat(stack_a, stack_b);
 	return (0);
-}*/
+}

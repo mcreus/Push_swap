@@ -6,7 +6,7 @@
 /*   By: mcreus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:28:42 by mcreus            #+#    #+#             */
-/*   Updated: 2023/05/09 10:36:56 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/05/11 15:04:39 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 int	reverse_rotate(t_list **stack)
 {
 	t_list	*head;
-	t_list	*end;
+	t_list	*down;
 
 	if (ft_lstsize(*stack) < 2)
 		return (-1);
 	head = *stack;
-	end = ft_lstlast(head);
+	down = ft_lstlast(head);
 	while (head)
 	{
 		if (head->next->next == NULL)
@@ -30,8 +30,8 @@ int	reverse_rotate(t_list **stack)
 		}
 		head = head->next;
 	}
-	end->next = *stack;
-	*stack = end;
+	down->next = *stack;
+	*stack = down;
 	return (0);
 }
 

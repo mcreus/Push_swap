@@ -14,7 +14,7 @@ CHECK_SRCS	=	ft_lst.c index_stack.c check_args.c \
 OBJS	=	${SRCS:%.c=%.o}
 CHECK_OBJS	=	${CHECK_SRCS:%.c=%.o}
 
-CC	=	gcc -g
+CC	=	gcc
 CFLAGS	=	-Wall -Wextra -Werror -I ./includes
 LIBFT	=	./libft/libft.a
 
@@ -36,14 +36,14 @@ ${CHECK}: ${CHECK_OBJS}
 	@echo "\033[1;32m\nCHECKER created\n"
 
 clean:
-	@echo "\033[0;31mDELETING LIBFT files\nPUSH_SWAP...\n"
+	@echo "\033[0;31mDELETING LIBFT files\nPUSH_SWAP...\n & CHECKER....\n"
 	@${MAKE} clean -C ./libft fclean
 	@${RM} ${OBJS}
 	@${RM} ${CHECK_OBJS}
 	@echo "033[1;32mDONE\n"
 
 fclean: clean
-	@echo "\033[0;31mDELETING PUSH_SWAP EXECUTABLE...."
+	@echo "\033[0;31mDELETING PUSH_SWAP & CHECKER EXECUTABLE...."
 	@${RM} ${NAME}
 	@${RM} ${CHECK}
 	@echo "\033[1;32mDONE\n"

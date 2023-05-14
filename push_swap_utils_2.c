@@ -6,7 +6,7 @@
 /*   By: mcreus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:38:02 by mcreus            #+#    #+#             */
-/*   Updated: 2023/05/09 12:04:42 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/05/12 14:50:05 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,17 @@ void	print_resultat(t_list **stack_a, t_list **stack_b)
 		free_stack(stack_a);
 	if (*stack_b)
 		free_stack(stack_b);
+}
+
+void	print_lst(t_list *head)
+{
+	t_list	*tmp;
+
+	tmp = head;
+	while (tmp != NULL)
+	{
+		ft_putnbr_fd(tmp->value, 1);
+		ft_putendl_fd("", 1);
+		tmp = tmp->next;
+	}
 }

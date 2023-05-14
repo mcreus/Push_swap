@@ -6,7 +6,7 @@
 /*   By: mcreus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:00:05 by mcreus            #+#    #+#             */
-/*   Updated: 2023/05/09 10:49:22 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/05/11 14:59:12 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,23 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (new != NULL)
 	{
-		new -> next = *lst;
+		new->next = *lst;
 		*lst = new;
 	}
 }
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst)
-		return (0);
-	while (lst -> next != NULL)
+	t_list	*tmp;
+
+	tmp = lst;
+	while (tmp->next != NULL)
 	{
-		lst = lst ->next;
+		tmp = tmp->next;
+		if (tmp->next == NULL)
+			return (tmp);
 	}
-	return (lst);
+	return (tmp);
 }
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
@@ -60,13 +63,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 int	ft_lstsize(t_list *lst)
 {
 	size_t	len;
+	t_list	*tmp;
 
+	tmp = lst;
 	len = 0;
-	if (!lst)
-		return (0);
-	while (lst != NULL)
+	while (tmp)
 	{
-		lst = lst -> next;
+		tmp = tmp->next;
 		len++;
 	}
 	return (len);
